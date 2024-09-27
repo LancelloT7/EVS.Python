@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+</head>
+<body>
+
+    <div class="sidebar" id="mySidebar">
+        <button class="close-btn" onclick="toggleSidebar()">☰</button>
+        <a href="{% url 'entrada_produto' %}">ENTRADA</a>
+        <a href="#">TRIAGEM</a>
+        <a href="#">CONSERTO</a>
+        <a href="{% url 'logar' %}">SAIR</a>
+    </div>
+
+    <div class="main-content">
+        
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Entrada de Produto</title>
+            {% load static %}
+            <link rel="stylesheet" href="{% static 'css/entrada.css' %}">
+        </head>
+        <body>
+            <div class="container">
+                <h1>Entrada de Produto</h1>
+                
+                <form method="POST" action="{% url 'entrada_produto' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="ptn">PTN:</label>
+                        <input type="text" id="ptn" name="ptn" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sku">SKU:</label>
+                        <input type="text" id="sku" name="sku" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="serie">Série:</label>
+                        <input type="text" id="serie" name="serie" required>
+                    </div>
+        
+                    
+        
+                    <div class="form-group">
+                        <label for="modelo">Modelo:</label>
+                        <input type="text" id="modelo" name="modelo" required>
+                    </div>
+        
+                    <button type="submit">Cadastrar Produto</button>
+                </form>
+            </div>
+        </body>
+    </div>
+
+    <script src="{% static 'js/sidebar.js' %}"></script>
+</body>
+</html>

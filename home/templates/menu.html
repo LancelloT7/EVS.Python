@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+</head>
+<body>
+
+    <div class="sidebar" id="mySidebar">
+        <button class="close-btn" onclick="toggleSidebar()">☰</button>
+        <a href="{% url 'entrada_produto' %}">ENTRADA</a>
+        <a href="#">TRIAGEM</a>
+        <a href="#">CONSERTOS</a>
+        <a href="#">SAIR</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Bem-vindo à página principal</h1>
+        <p>Este é o conteúdo principal da página.</p>
+    </div>
+
+    <script src="{% static 'js/sidebar.js' %}"></script>
+</body>
+</html>
